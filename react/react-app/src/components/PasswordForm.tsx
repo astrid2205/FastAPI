@@ -3,6 +3,8 @@ import Checkbox from "./Checkbox";
 
 export default function PasswordForm() {
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   // Fetch random password from FastAPI
   function handleSubmit(e: { preventDefault: () => void; target: any }) {
@@ -20,9 +22,20 @@ export default function PasswordForm() {
       headers: { "Content-Type": "application/json" },
       body: jsonformData,
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status !== 200) {
+          setError(true);
+        } else {
+          setError(false);
+        }
+        return res.json();
+      })
       .then((result) => {
-        setPassword(result["password"]);
+        if ("password" in result) {
+          setPassword(result["password"]);
+        } else {
+          setErrorMessage(result["detail"]);
+        }
       }),
       (error: any) => console.log(error);
   }
@@ -30,6 +43,7 @@ export default function PasswordForm() {
   return (
     <>
       <p className="input-group mb-3">Generate a random password.</p>
+      {error && <div className="input-group mb-3 error">{errorMessage}</div>}
       <div className="input-group mb-3">
         <span id="random-password" className="input-group-text">
           Random Password

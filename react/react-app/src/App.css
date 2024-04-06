@@ -30,3 +30,7 @@
 #random-password {
   background-color: rgb(194, 230, 194);
 }
+
+.error {
+  color: red;
+}
