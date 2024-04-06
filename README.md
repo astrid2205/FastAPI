@@ -4,12 +4,12 @@ You may test the API using the [Interactive API docs](https://fastapi-n8ag.onren
 
 ## Generate password
 
-### API Endpoints
+### API Endpoint:
 
 - URL: [https://fastapi-n8ag.onrender.com/generate-password](https://fastapi-n8ag.onrender.com/generate-password)
 - Method: `POST`
 
-### Request Payload
+### Request Payload:
 
 A JSON payload containing fields for password generation, with default values using security best practices, which contains a password length of 12, including lowercase letters, uppercase letters, numbers, and special characters.
 
@@ -54,7 +54,7 @@ with travel `mode` within `time_range`, and return the route from the start loca
 
 For example, recommend a Chinese restaurant within walking distance of 15 mins from the British Museum.
 
-### API End Point:
+### API Endpoint:
 
 - URL: https://fastapi-n8ag.onrender.com/recommend-restaurant?REQUEST_PARAMS
 
@@ -62,12 +62,14 @@ For example, recommend a Chinese restaurant within walking distance of 15 mins f
 
 ### Request parameters:
 
-| Name       | Format | Description                                           | Example                     |
-| ---------- | ------ | ----------------------------------------------------- | --------------------------- |
-| location   | string | Address / place name to search                        | british museum              |
-| mode       | string | Travel mode <br>(walk / bus / bicycle)                | walk                        |
-| time_range | int    | Time (in minutes)                                     | 15                          |
-| categories | string | Type of the restaurant <br>(full list in the API doc) | catering.restaurant.chinese |
+| Name       | Format | Description                                                                                                                                                                              | Example                     |
+| ---------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- |
+| location   | string | Address / place name to search                                                                                                                                                           | british museum              |
+| mode       | string | Travel mode <br>(walk / bus / bicycle)                                                                                                                                                   | walk                        |
+| time_range | int    | Time (in minutes) <br>default is 15                                                                                                                                                      | 15                          |
+| categories | string | Type of the restaurant <br>(full list in the [API doc](https://fastapi-n8ag.onrender.com/docs#/default/recommend_restaurant_recommend_restaurant_get))<br>default is catering.restaurant | catering.restaurant.chinese |
+
+example: https://fastapi-n8ag.onrender.com/recommend-restaurant?location=british%20museum&mode=walk&time_range=15&categories=catering.restaurant.chinese
 
 ### Third-party API Integration:
 
