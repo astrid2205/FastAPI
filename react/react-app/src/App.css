@@ -1,0 +1,32 @@
+.input-group,
+#map-message,
+#loading {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.form-check,
+#mode {
+  margin: 0 40px 0 40px;
+}
+
+#map {
+  width: calc(100% - 80px) !important;
+  margin: 0 40px 0 40px;
+  border-radius: 7px;
+}
+
+#submitBtn {
+  width: calc(100% - 80px) !important;
+  margin: 0 40px 0 40px;
+  width: 100%;
+}
+
+.address {
+  font-size: small;
+  color: gray;
+}
+
+#random-password {
+  background-color: rgb(194, 230, 194);
+}
