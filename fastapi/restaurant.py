@@ -11,6 +11,7 @@ class TravelMode(str, Enum):
     walk = "walk"
     bicycle = "bicycle"
     bus = "bus"
+    drive = "drive"
 
 # A list of restaurant categories
 class CateringType(str, Enum):
