@@ -55,8 +55,7 @@ def mock_requests_get():
     with patch("restaurant.requests.get") as mock_get:
         yield mock_get
 
-def test_recommend_restaurant_drive_success(mock_requests_get):
-    # Configure mock responses for a successful scenario
+def configure_mock_requests_get(mock_requests_get):
     mock_requests_get.side_effect = [
         MagicMock(status_code=200, json=lambda: mock_geocode_response_success),  # Geocode
         MagicMock(status_code=200, json=lambda: mock_isoline_response_success),  # Isoline
